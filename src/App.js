@@ -15,6 +15,8 @@ import { HelpLayout } from "./layout/HelpLayout.jsx";
 import { Service } from "./pages/Help/service.jsx";
 import { Faq } from "./pages/Help/faq.jsx";
 import { NotFound } from "./pages/NotFound.jsx";
+import { CareersLayout } from "./layout/CareersLayout.jsx";
+import Careers, { careersLoader } from "./pages/careers/careers.jsx";
 
 function App() {
   const Router = createBrowserRouter(
@@ -26,6 +28,9 @@ function App() {
         <Route path='help' element={<HelpLayout />}>
           <Route path='service' element={<Service />} />
           <Route path='faq' element={<Faq />} />
+        </Route>
+        <Route path='careers' element={<CareersLayout />}>
+          <Route index element={<Careers />} loader={careersLoader} />
         </Route>
         <Route path='*' element={<NotFound />} />
       </Route>,
