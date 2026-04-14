@@ -49,11 +49,26 @@ header nav a.active {
 }
 /* page content */
 .main {
-   margin: 56px auto;
-   max-width: 12000px;
+  margin: 56px auto;
+  max-width: 12000px;
 }
 /* help layout */
+.help-layout {
+  display: flex;
+  justify-content: end;
+ 
+  margin: 30px 0;
+  gap: 30px;
+}
+.help-layout nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
 
+.help-layout nav a {
+  margin-left: auto;
+}
 /* faq */
 
 /* careers list */
