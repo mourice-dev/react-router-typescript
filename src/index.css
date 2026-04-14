@@ -48,7 +48,10 @@ header nav a.active {
   background-color: var(--primary);
 }
 /* page content */
-
+.main {
+   margin: 56px auto;
+   max-width: 12000px;
+}
 /* help layout */
 
 /* faq */
