@@ -5,6 +5,7 @@ import {
   Route,
   createBrowserRouter,
   RouterProvider,
+  Form,
 } from "react-router-dom";
 
 import { RootLayout } from "./layout/RootLayout.jsx";
@@ -17,6 +18,7 @@ import { Faq } from "./pages/Help/faq.jsx";
 import { NotFound } from "./pages/NotFound.jsx";
 import { CareersLayout } from "./layout/CareersLayout.jsx";
 import Careers, { careersLoader } from "./pages/careers/careers.jsx";
+import { CareerDetails, careerDetailsLoader } from "./pages/careers/CareerDetails.jsx"
 
 function App() {
   const Router = createBrowserRouter(
@@ -31,7 +33,9 @@ function App() {
         </Route>
         <Route path='careers' element={<CareersLayout />}>
           <Route index element={<Careers />} loader={careersLoader} />
+          <Route path=':id' loader={careerDetailsLoader} element={<CareerDetails />} />
         </Route>
+
         <Route path='*' element={<NotFound />} />
       </Route>,
     ),
