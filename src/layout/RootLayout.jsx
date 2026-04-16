@@ -1,5 +1,6 @@
 /** @format */
 import { NavLink, Outlet } from "react-router-dom";
+import { BreadCrumbs } from "../Component/BreadCrumbs.jsx";
 
 export function RootLayout() {
   return (
@@ -18,6 +19,7 @@ export function RootLayout() {
             <NavLink to='/careers'>Careers</NavLink>
           </span>
         </nav>
+        <BreadCrumbs />
       </header>{" "}
       <main>
         <Outlet />
