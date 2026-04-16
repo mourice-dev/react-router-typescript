@@ -5,7 +5,7 @@ export function Contact() {
 
     return (<>
         <h2>Contact Page</h2>
-        <Form method="post" action="help/contact">
+        <Form method="post">
             
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" />
@@ -20,7 +20,7 @@ export function Contact() {
 }
 
 export const contactAction = async ({ request }) => {
- const data = request.formData();
+ const data = await request.formData();
 
  const submittion  = { 
     email: data.get('email'),
