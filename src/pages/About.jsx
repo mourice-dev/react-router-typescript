@@ -2,7 +2,12 @@ import { Navigate } from "react-router-dom";
 import { useState } from "react";
 
 export function About() {
-    const [user, setUser] = useState('mario');
+    const [user, setUser] = useState(() => localStorage.getItem('user') || 'mario');
+
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        setUser(null);
+    };
 
     if(!user){
         return <Navigate to="/" replace={true} />
@@ -398,7 +403,7 @@ export function About() {
             o Williams (Williams' solution)
             o Young (Young's modulus)</p>
 
-            <button onClick={() => setUser(null)}>logout</button>
+            <button onClick={handleLogout}>logout</button>
   
 
     </>
