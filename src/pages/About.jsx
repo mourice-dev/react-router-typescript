@@ -1,4 +1,13 @@
+import { Navigate } from "react-router-dom";
+import { useState } from "react";
+
 export function About() {
+    const [user, setUser] = useState('mario');
+
+    if(!user){
+        return <Navigate to="/" replace={true} />
+    }
+
     return (<>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae delectus exercitationem placeat perspiciatis corrupti esse iusto mollitia asperiores. Sed, exercitationem aut tempora optio enim eaque modi nulla delectus alias!Lorem
@@ -388,6 +397,8 @@ export function About() {
             o Taylor, Geoffrey (Dislocations in metals)
             o Williams (Williams' solution)
             o Young (Young's modulus)</p>
+
+            <button onClick={() => setUser(null)}>logout</button>
   
 
     </>
