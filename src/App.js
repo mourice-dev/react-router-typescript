@@ -20,6 +20,7 @@ import { CareersLayout } from "./layout/CareersLayout.jsx";
 import Careers, { careersLoader } from "./pages/careers/careers.jsx";
 import { CareerDetails, careerDetailsLoader } from "./pages/careers/CareerDetails.jsx";
 import { CareersError } from "./pages/careers/CareersError.jsx";
+import { contactAction } from "./pages/Contact.jsx";
 
 function App() {
   const Router = createBrowserRouter(
@@ -27,7 +28,7 @@ function App() {
       <Route path='/' element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
-        <Route path='contact' element={<Contact />} />
+        <Route path='contact' element={<Contact />} action={contactAction} />
         <Route path='help' element={<HelpLayout />}>
           <Route path='service' element={<Service />} />
           <Route path='faq' element={<Faq />} />
