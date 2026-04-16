@@ -1,7 +1,7 @@
-import { Form, redirect } from "react-router-dom";
+import { Form, redirect, useActionData } from "react-router-dom";
 
 export function Contact() {
-
+const data = useActionData();
 
     return (<>
         <h2>Contact Page</h2>
@@ -11,7 +11,8 @@ export function Contact() {
             <input type="email" id="email" name="email" />
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message"></textarea>
-            <button type="submit">Send</button>
+            <button type="submit">Send</button> 
+            {data && data.error &&  <p>{data.error}</p>}
         </Form>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque a, at eveniet vel dolorem quia enim unde recusandae ratione cupiditate omnis adipisci? Molestias harum consequatur necessitatibus natus dolore, nam iusto.</p>
 
