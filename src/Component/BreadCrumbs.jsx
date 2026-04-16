@@ -8,15 +8,19 @@ export function BreadCrumbs() {
     const crumbs = location.pathname.split('/')
     .filter((crumb) => crumb !=='')
     .map((crumb) => { currentLink+=`/${crumb}`
-  return(
-    <span key={crumbs}>
-      <Link to={currentLink}>{crumb}</Link>
-    </span>
-  )});
+      return(
+        <span className="crumb" key={crumb}>
+          <Link to={currentLink} className={isLast ? 'active-crumb' : ''}>
+            {crumb.charAt(0).toUpperCase() + crumb.slice(1)}
+          </Link>
+          {!isLast && <span className="crumb-separator">›</span>}
+        </span>
+      )
+    });
 
   return (
-    <div>
-      <p>{crumbs}</p>
+    <div className="breadcrumbs">
+      {crumbs}
     </div>
   )
 }

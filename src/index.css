@@ -83,3 +83,30 @@ header nav a.active {
 /* careers details */
 
 /* breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+.crumb a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.crumb a:hover {
+  color: #fff;
+}
+.crumb a.active-crumb {
+  color: var(--primary);
+  font-weight: 700;
+}
+.crumb-separator {
+  margin: 0 6px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+}
